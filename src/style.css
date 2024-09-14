@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.side-bar {
+  background-color: rgb(246, 235, 235);
+  min-width: 10vw;
+  height: 100vh;
+}
+.content {
+  /* background-color: rgb(215, 251, 251); */
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 20px;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+.container {
+  /* background-color: rgb(241, 241, 241); */
+  display: flex;
+  /* flex-direction: ; */
+  box-sizing: border-box;
+  min-width: 300px;
+  max-height: 250px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  flex: 1 1 300px;
+}
+.work-area {
+  display: flex;
+  background-color: #ffffdf;
+}
+button {
+  margin: 4px auto;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+#delBtn {
+  background-color: rgb(75, 222, 227);
+  width: 4rem;
+  height: 2rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: white;
+}
+#delBtn:hover {
+  cursor: pointer;
+  scale: 1.05;
+  background-color: aqua;
+}
+
+.card {
+  /* max-width: 20rem; */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 1em 3em;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card > button {
+  background-color: rgb(86, 255, 35);
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+}
+.card > button:hover {
+  scale: 1.1;
+  transition: 0.15s;
+}

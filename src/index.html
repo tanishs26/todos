@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h2>Add a Task</h2>
+        Title
+        <input type="text" placeholder="Enter task" id="title">
+        <br>
+        Description <br> <textarea id="description"></textarea><br>
+        Priority <select id="priority" name="importance">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <br>
+        Due Date <input type="date" id="date">
+        <br>
+        <button type="submit" id="submit">Submit</button>
+
+    </div>
+    <div class="work-area">
+        <div class="side-bar">
+            <h1 style="text-align :center;">Todos</h1>
+            <hr>
+            <div style="display:flex;flex-direction:column;">
+                <button id="all">All</button>
+                <button id="unfin">Unfinished</button>
+                <button id="completed">Completed</button>
+                <button id="upcoming">Upcoming</button>
+                <button id="addTask">Add Task +</button>
+            </div>
+            <hr>
+            <h2>Projects</h2>
+            <div class="projects"></div>
+            <div style="display:flex;flex-direction:column;">
+                <button id="projectBtn">+Project</button>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="content">
+            
+
+            
+        </div>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
