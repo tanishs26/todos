@@ -1,5 +1,5 @@
 import display from "./display";
-
+import unfins from "./uncomplete";
 export default function addItem() {
   const submit = document.querySelector("#submit");
   const title = document.querySelector("#title");
@@ -40,8 +40,16 @@ export default function addItem() {
     allTasks.push(newTask);
     display(allTasks);
   });
-  
+
+  const allBtn = document.querySelector("#all");
+  allBtn.addEventListener("click", () => {
+    display(allTasks);
+  });
+  const unfin = document.querySelector("#unfin");
+  unfin.addEventListener("click", () => {
+    unfins(allTasks);
+  });
   console.log(allTasks);
-  console.log(allTasks.length);
+  // console.log(allTasks.length);
   return allTasks;
 }

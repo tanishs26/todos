@@ -2,18 +2,25 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  
+
 }
 .side-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgb(246, 235, 235);
   min-width: 10vw;
   height: 100vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
+
 }
 .content {
   /* background-color: rgb(215, 251, 251); */
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 10px;
+  padding: 20px;
   justify-content: space-evenly;
 }
 .container {
@@ -21,25 +28,62 @@ body {
   display: flex;
   /* flex-direction: ; */
   box-sizing: border-box;
-  min-width: 300px;
-  max-height: 250px;
+  max-width: 400px;
+  min-width: 400px;
+  max-height: 300px;
   overflow-y: scroll;
   border-radius: 10px;
   justify-content: space-between;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-  flex: 1 1 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
+  scrollbar-width: none;
+}
+.container:hover{
+  background-color: rgba(86, 201, 255, 0.103);
+  transition: 0.25s;
+
+}
+.divDel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+input[type='checkbox'] {
+  accent-color: rgb(75, 222, 227);
+  width: 1rem;
+  height: 1rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+.conDiv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-width:200px ;
 }
 .work-area {
   display: flex;
   background-color: #ffffdf;
+  background-color: rgba(216, 216, 216, 0.15);
 }
+
 button {
   margin: 4px auto;
   border: none;
+  width: 5rem;
+  height: 2rem;
   background: none;
   outline: none;
   cursor: pointer;
+  box-sizing: border-box;
+}
+button:hover{
+  background-color: rgba(209, 209, 209, 0.48);
+  border-radius: 10px;
+  transition: 0.15s;
 }
 #delBtn {
   background-color: rgb(75, 222, 227);
@@ -63,11 +107,20 @@ button {
   justify-content: center;
   border-radius: 20px;
   padding: 1em 3em;
-  background-color: #ffffff;
+  background-color: #d2ebeb3c;
   position: absolute;
   top: 50%;
   left: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
+
   transform: translate(-50%, -50%);
+}
+input,
+textarea,
+select,
+option {
+  background-color: rgba(255, 143, 162, 0);
+  border: 2px rgb(0, 0, 0) solid;
 }
 .card > button {
   background-color: rgb(86, 255, 35);

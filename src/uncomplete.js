@@ -1,25 +1,16 @@
-import "./style.css";
-import addItem from "./addItem";
-export default function display(allTasks) {
-  const addTask = document.querySelector("#addTask");
-  const submit = document.querySelector("#submit");
-  const title = document.querySelector("#title");
-  const desc = document.querySelector("#description");
-  const priority = document.querySelector("#priority");
-  const date = document.querySelector("#date");
-  const card = document.querySelector(".card");
+export default function unfins(allTasks) {
   const content = document.querySelector(".content");
-  content.textContent = "";
+  content.textContent = ".";
 
-  for (let i = 0; i < allTasks.length; i++) {
+  const task = allTasks.filter((t) => !t.completed);
+  for (let i = 0; i < task.length; i++) {
     const container = document.createElement("div");
     container.innerHTML = `
       <div class="conDiv"><h2 style="margin:8px;" class="con-title">${allTasks[i].title}</h2>
       <div style="margin:8px;" class="con-desc">${allTasks[i].desc}</div>
       <div style="margin:8px;">${allTasks[i].date}</div>
       <div style="margin:8px;">${allTasks[i].priority}</div></div>`;
-
-    const delBtn = document.createElement("button");
+      const delBtn = document.createElement("button");
     const divDel = document.createElement("div");
     divDel.classList.add("divDel");
     delBtn.id = "delBtn";
@@ -55,13 +46,8 @@ export default function display(allTasks) {
     divDel.appendChild(delBtn);
     divDel.appendChild(check);
     container.appendChild(divDel);
-    
+
     container.classList.add("container");
     content.appendChild(container);
   }
-
-  title.value = "";
-  desc.value = "";
-  priority.value = "";
-  date.value = "";
 }
