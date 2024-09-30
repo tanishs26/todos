@@ -9,21 +9,26 @@ export default function display(allTasks) {
   const date = document.querySelector("#date");
   const card = document.querySelector(".card");
   const content = document.querySelector(".content");
+  const editCard = document.querySelector(".editCard");
+  const edHead = document.querySelector(".edHead");
+  const edInfo = document.querySelector(".edInfo");
+  const edDate = document.querySelector(".edDate");
+  const edPriority = document.querySelector(".edPriority");
   content.textContent = "";
 
   for (let i = 0; i < allTasks.length; i++) {
     const container = document.createElement("div");
     container.innerHTML = `
-      <div class="conDiv"><h2 style="margin:8px;" class="con-title">${allTasks[i].title}</h2>
-      <div style="margin:8px;" class="con-desc">${allTasks[i].desc}</div>
+      <div class="conDiv"><h2 class="con-title">${allTasks[i].title}</h2>
+      <div  class="con-desc" >${allTasks[i].desc}</div>
       <div style="margin:8px;">${allTasks[i].date}</div>
       <div style="margin:8px;">${allTasks[i].priority}</div></div>`;
 
     const delBtn = document.createElement("button");
     const divDel = document.createElement("div");
     divDel.classList.add("divDel");
+    delBtn.classList.add("delBtn")
     delBtn.id = "delBtn";
-    delBtn.textContent = "Delete";
     delBtn.addEventListener("click", () => {
       allTasks.splice(i, 1);
       display(allTasks);
@@ -52,10 +57,36 @@ export default function display(allTasks) {
         con_title.style.textDecoration = "none";
       }
     });
+
+    const edit = document.createElement("div");
+    edit.textContent = "🖉";
+    edit.style.cursor = "pointer";
+    edit.addEventListener("click", () => {
+      editCard.style.display = "block";
+      edHead.textContent = allTasks[i].title;
+      edInfo.textContent = allTasks[i].desc;
+      edDate.value = allTasks[i].date;
+      edPriority.value = allTasks[i].priority;
+
+      const doneBtn = document.createElement("button");
+      doneBtn.textContent = "Done!";
+      doneBtn.classList.add("doneBtn");
+      doneBtn.addEventListener("click", () => {
+        allTasks[i].title = edHead.textContent;
+        allTasks[i].desc = edInfo.textContent;
+        allTasks[i].date = edDate.value;
+        allTasks[i].priority = edPriority.value;
+        editCard.style.display = "none";
+        display(allTasks);
+      });
+      editCard.appendChild(doneBtn);
+    });
+
     divDel.appendChild(delBtn);
     divDel.appendChild(check);
+    divDel.appendChild(edit);
     container.appendChild(divDel);
-    
+
     container.classList.add("container");
     content.appendChild(container);
   }

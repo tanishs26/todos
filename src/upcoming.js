@@ -1,0 +1,55 @@
+import display from "./display";
+export default function upcom(allTasks) {
+  const content = document.querySelector(".content");
+  content.textContent = "";
+  const today = new Date();
+  const task = allTasks.filter((n) => {
+    const taskDate = new Date(n.date);
+    return taskDate >= today;
+  });
+  for (let i = 0; i < task.length; i++) {
+    const container = document.createElement("div");
+    container.innerHTML = `
+      <div class="conDiv"><h2 style="margin:8px;" class="con-title">${task[i].title}</h2>
+      <div style="margin:8px;" class="con-desc">${task[i].desc}</div>
+      <div style="margin:8px;">${task[i].date}</div>
+      <div style="margin:8px;">${task[i].priority}</div></div>`;
+    const delBtn = document.createElement("button");
+    const divDel = document.createElement("div");
+    divDel.classList.add("divDel");
+    delBtn.id = "delBtn";
+    delBtn.addEventListener("click", () => {
+      allTasks.splice(i, 1);
+      display(allTasks);
+    });
+
+    //checkbox
+    const check = document.createElement("input");
+    check.type = "checkbox";
+
+    check.checked = task[i].completed;
+
+    const con_title = container.querySelector(".con-title");
+    const con_desc = container.querySelector(".con-desc");
+    if (task[i].completed) {
+      con_desc.style.textDecoration = "line-through";
+      con_title.style.textDecoration = "line-through";
+    }
+
+    check.addEventListener("change", () => {
+      task[i].completed = check.checked;
+      if (check.checked) {
+        con_desc.style.textDecoration = "line-through";
+        con_title.style.textDecoration = "line-through";
+      } else {
+        con_desc.style.textDecoration = "none";
+        con_title.style.textDecoration = "none";
+      }
+    });
+    divDel.appendChild(delBtn);
+    divDel.appendChild(check);
+    container.appendChild(divDel);
+    container.classList.add("container");
+    content.appendChild(container);
+  }
+}

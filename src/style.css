@@ -2,21 +2,25 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  
-
+  background-color: #1f1f1f;
+  color: white;
+}
+.btnDivs {
+  display: flex;
+  flex-direction: column;
+  color: gold;
 }
 .side-bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(246, 235, 235);
+  background-color: #1f1f1f;
+  color: white;
   min-width: 10vw;
   height: 100vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
-
 }
 .content {
-  /* background-color: rgb(215, 251, 251); */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -24,24 +28,35 @@ body {
   justify-content: space-evenly;
 }
 .container {
-  /* background-color: rgb(241, 241, 241); */
+  background-color: #1f1f1f7c;
   display: flex;
-  /* flex-direction: ; */
-  box-sizing: border-box;
-  max-width: 400px;
-  min-width: 400px;
+  width: 350px;
   max-height: 300px;
-  overflow-y: scroll;
   border-radius: 10px;
   justify-content: space-between;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
-  scrollbar-width: none;
+  box-shadow: 0 1px 3px rgba(134, 255, 249, 0.509);
 }
-.container:hover{
+.container:hover {
   background-color: rgba(86, 201, 255, 0.103);
   transition: 0.25s;
-
+}
+.con-desc {
+  margin: 8px;
+  width: 100px;
+  word-wrap: break-word;
+}
+.con-title {
+  margin: 8px;
+  word-wrap: break-word;
+  font-style: italic;
+  text-decoration: underline;
+}
+.con-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  word-break: break-all;
 }
 .divDel {
   display: flex;
@@ -49,11 +64,10 @@ body {
   justify-content: space-between;
   padding: 1rem 0;
 }
-input[type='checkbox'] {
-  accent-color: rgb(75, 222, 227);
+input[type="checkbox"] {
+  accent-color: rgb(48, 252, 255);
   width: 1rem;
   height: 1rem;
-  color: white;
   cursor: pointer;
   margin-left: 2rem;
 }
@@ -62,14 +76,13 @@ input[type='checkbox'] {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  min-width:200px ;
+  min-width: 200px;
 }
 .work-area {
   display: flex;
-  background-color: #ffffdf;
   background-color: rgba(216, 216, 216, 0.15);
+  height: 100%;
 }
-
 button {
   margin: 4px auto;
   border: none;
@@ -80,47 +93,40 @@ button {
   cursor: pointer;
   box-sizing: border-box;
 }
-button:hover{
+button:hover {
   background-color: rgba(209, 209, 209, 0.48);
   border-radius: 10px;
   transition: 0.15s;
+  
 }
 #delBtn {
-  background-color: rgb(75, 222, 227);
-  width: 4rem;
-  height: 2rem;
-  padding: 8px 16px;
-  border-radius: 5px;
-  color: white;
+  
+    background: url('delete-document.png') no-repeat center;
+    background-size: contain;
+    width: 30px; 
+    height: 30px;
+    border: none;
+  
 }
 #delBtn:hover {
   cursor: pointer;
   scale: 1.05;
-  background-color: aqua;
+  background-color: rgb(255, 0, 0);
 }
-
 .card {
-  /* max-width: 20rem; */
+  background: rgb(13,34,63);
+background: linear-gradient(90deg, rgba(13,34,63,1) 62%, rgba(0,0,0,1) 100%, rgba(0,212,255,1) 100%);
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   padding: 1em 3em;
-  background-color: #d2ebeb3c;
   position: absolute;
   top: 50%;
   left: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
-
   transform: translate(-50%, -50%);
-}
-input,
-textarea,
-select,
-option {
-  background-color: rgba(255, 143, 162, 0);
-  border: 2px rgb(0, 0, 0) solid;
 }
 .card > button {
   background-color: rgb(86, 255, 35);
@@ -132,4 +138,41 @@ option {
 .card > button:hover {
   scale: 1.1;
   transition: 0.15s;
+}
+.editCard {
+  background-color: #757575;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em 3em;
+  border-radius: 10px;
+  border: 1px solid gold;
+  display: flex;
+}
+.editCard > button {
+  background-color: rgb(75, 222, 227);
+  width: 4rem;
+  height: 2rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .side-bar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    flex-direction: row;
+  }
+  .btnDivs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .content {
+    margin-top: 100px;
+  }
 }

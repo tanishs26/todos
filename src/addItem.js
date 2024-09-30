@@ -1,5 +1,6 @@
 import display from "./display";
 import unfins from "./uncomplete";
+import upcom from "./upcoming";
 export default function addItem() {
   const submit = document.querySelector("#submit");
   const title = document.querySelector("#title");
@@ -13,8 +14,15 @@ export default function addItem() {
       title: "Learn js",
       desc: "Will be learning Modules in JS",
       priority: "Medium",
-      date: "20-07-2024",
+      date: "2024-09-26",
     },
+    {
+      title: "Exercise",
+      desc: "Doing 10 pushups",
+      priority: "High",
+      date: "2024-09-29",
+    },
+   
   ];
 
   addTask.addEventListener("click", () => {
@@ -49,6 +57,11 @@ export default function addItem() {
   unfin.addEventListener("click", () => {
     unfins(allTasks);
   });
+  const upcoming = document.querySelector("#upcoming");
+  upcoming.addEventListener("click", () => {
+    upcom(allTasks);
+  });
+
   console.log(allTasks);
   // console.log(allTasks.length);
   return allTasks;
