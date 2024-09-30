@@ -4,11 +4,14 @@ body {
   position: relative;
   background-color: #1f1f1f;
   color: white;
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 .btnDivs {
   display: flex;
   flex-direction: column;
   color: gold;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .side-bar {
   display: flex;
@@ -19,6 +22,8 @@ body {
   min-width: 10vw;
   height: 100vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .content {
   display: flex;
@@ -26,16 +31,19 @@ body {
   gap: 20px;
   padding: 20px;
   justify-content: space-evenly;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .container {
   background-color: #1f1f1f7c;
   display: flex;
   width: 350px;
-  max-height: 300px;
+  max-height: auto;
   border-radius: 10px;
   justify-content: space-between;
   padding: 10px;
-  box-shadow: 0 1px 3px rgba(134, 255, 249, 0.509);
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .container:hover {
   background-color: rgba(86, 201, 255, 0.103);
@@ -45,24 +53,32 @@ body {
   margin: 8px;
   width: 100px;
   word-wrap: break-word;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .con-title {
   margin: 8px;
   word-wrap: break-word;
-  font-style: italic;
+  font-family: italic;
   text-decoration: underline;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .con-div {
   display: flex;
   flex-direction: column;
   width: 100%;
   word-break: break-all;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .divDel {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 0;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 input[type="checkbox"] {
   accent-color: rgb(48, 252, 255);
@@ -70,6 +86,8 @@ input[type="checkbox"] {
   height: 1rem;
   cursor: pointer;
   margin-left: 2rem;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .conDiv {
   display: flex;
@@ -77,11 +95,15 @@ input[type="checkbox"] {
   flex-wrap: wrap;
   justify-content: space-evenly;
   min-width: 200px;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .work-area {
   display: flex;
   background-color: rgba(216, 216, 216, 0.15);
   height: 100%;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 button {
   margin: 4px auto;
@@ -92,21 +114,25 @@ button {
   outline: none;
   cursor: pointer;
   box-sizing: border-box;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 button:hover {
   background-color: rgba(209, 209, 209, 0.48);
   border-radius: 10px;
   transition: 0.15s;
+  font-family: "Fira Sans Condensed", sans-serif;
+
   
 }
 #delBtn {
-  
     background: url('delete-document.png') no-repeat center;
     background-size: contain;
     width: 30px; 
     height: 30px;
     border: none;
-  
+    font-family: "Fira Sans Condensed", sans-serif;
+
 }
 #delBtn:hover {
   cursor: pointer;
@@ -114,8 +140,7 @@ button:hover {
   background-color: rgb(255, 0, 0);
 }
 .card {
-  background: rgb(13,34,63);
-background: linear-gradient(90deg, rgba(13,34,63,1) 62%, rgba(0,0,0,1) 100%, rgba(0,212,255,1) 100%);
+  background-color: #1f1f1fc9;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -127,6 +152,8 @@ background: linear-gradient(90deg, rgba(13,34,63,1) 62%, rgba(0,0,0,1) 100%, rgb
   left: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509);
   transform: translate(-50%, -50%);
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .card > button {
   background-color: rgb(86, 255, 35);
@@ -134,6 +161,8 @@ background: linear-gradient(90deg, rgba(13,34,63,1) 62%, rgba(0,0,0,1) 100%, rgb
   border-radius: 10px;
   color: white;
   font-weight: 700;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .card > button:hover {
   scale: 1.1;
@@ -149,6 +178,8 @@ background: linear-gradient(90deg, rgba(13,34,63,1) 62%, rgba(0,0,0,1) 100%, rgb
   border-radius: 10px;
   border: 1px solid gold;
   display: flex;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 .editCard > button {
   background-color: rgb(75, 222, 227);
@@ -157,6 +188,8 @@ background: linear-gradient(90deg, rgba(13,34,63,1) 62%, rgba(0,0,0,1) 100%, rgb
   padding: 8px 16px;
   border-radius: 5px;
   color: white;
+  font-family: "Fira Sans Condensed", sans-serif;
+
 }
 
 /* Media Query for Mobile Screens */

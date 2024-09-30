@@ -19,21 +19,24 @@ export default function display(allTasks) {
   for (let i = 0; i < allTasks.length; i++) {
     const container = document.createElement("div");
     container.innerHTML = `
-      <div class="conDiv"><h2 class="con-title">${allTasks[i].title}</h2>
-      <div  class="con-desc" >${allTasks[i].desc}</div>
-      <div style="margin:8px;">${allTasks[i].date}</div>
-      <div style="margin:8px;">${allTasks[i].priority}</div></div>`;
+      <div class="conDiv">
+          <h2 class="con-title">${allTasks[i].title}</h2>
+          <div  class="con-desc" >${allTasks[i].desc}</div>
+          <div style="margin:8px;">${allTasks[i].date}</div>
+          <div style="margin:8px;">${allTasks[i].priority}</div>
+      </div>`;
 
     const delBtn = document.createElement("button");
     const divDel = document.createElement("div");
     divDel.classList.add("divDel");
-    delBtn.classList.add("delBtn")
+    delBtn.classList.add("delBtn");
     delBtn.id = "delBtn";
     delBtn.addEventListener("click", () => {
       allTasks.splice(i, 1);
       display(allTasks);
     });
-
+    //Box-Shadow:
+    
     //checkbox
     const check = document.createElement("input");
     check.type = "checkbox";
