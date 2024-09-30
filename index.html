@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="609a232ab53e413e38d2.css">
+
+<script defer src="main.js"></script></head>
+
+<body>
+
+    <div class="editCard" style="display: none;">
+        <div style="margin: 2em;">
+            <h2 class="edHead" contenteditable="true"></h2>
+            <p class="edInfo" contenteditable="true"></p>
+            <!-- <button class="doneBtn">Done!</button> -->
+        </div>
+        <div><input type="date" class="edDate" style="margin: 2em;">
+            <select class="edPriority" style="margin: 2em;">
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Add a Task</h2>
+        Title
+        <input type="text" placeholder="Enter task" id="title">
+        <br>Description <br> <textarea id="description"></textarea><br>
+        Priority <select id="priority" name="importance">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <br>
+            Due Date <input type="date" id="date">
+        <br>
+        <button type="submit" id="submit">Submit</button>
+
+    </div>
+    <div class="work-area">
+        <div class="side-bar">
+            <h1 style="text-align :center;">Todos</h1>
+            <br>
+            <div class="btnDivs">
+                <button id="all" style="color:white;">All</button>
+                <button id="unfin" style="color:white;">Unfinished</button>
+                <!-- <button id="completed">Completed</button><br> -->
+                <button id="upcoming" style="color:white;">Upcoming</button>
+                <button id="addTask" style="color:white;">Add Task +</button>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="content">
+
+
+
+        </div>
+    </div>
+
+</body>
+<script src="834d49fb3b3d5cc2c489.js"></script>
+
+</html>
