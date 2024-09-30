@@ -23,6 +23,41 @@ export default function upcom(allTasks) {
       display(allTasks);
     });
 
+    //Box-Shadow:
+    if (allTasks[i].priority == "High") {
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(255,0,0,0.6)";
+    }
+    else if(allTasks[i].priority=="Medium"){
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(255,187,0,1)";
+    }
+    else{
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(111,255,1)";
+
+    }
+    const edit = document.createElement("div");
+    edit.textContent = "✏️";
+    edit.style.cursor = "pointer";
+    edit.addEventListener("click", () => {
+      editCard.style.display = "block";
+      edHead.textContent = task[i].title;
+      edInfo.textContent = task[i].desc;
+      edDate.value = task[i].date;
+      edPriority.value = task[i].priority;
+
+      const doneBtn = document.createElement("button");
+      doneBtn.textContent = "Done!";
+      doneBtn.classList.add("doneBtn");
+      doneBtn.addEventListener("click", () => {
+        task[i].title = edHead.textContent;
+        task[i].desc = edInfo.textContent;
+        task[i].date = edDate.value;
+        task[i].priority = edPriority.value;
+        editCard.style.display = "none";
+        display(allTasks);
+      });
+      editCard.appendChild(doneBtn);
+    });
+
     //checkbox
     const check = document.createElement("input");
     check.type = "checkbox";

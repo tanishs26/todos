@@ -20,6 +20,17 @@ export default function unfins(allTasks) {
         <div style="margin:8px;">${task[i].priority}</div>
       </div>`;
 
+      //Box-Shadow:
+    if (allTasks[i].priority == "High") {
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(255,0,0,0.6)";
+    }
+    else if(allTasks[i].priority=="Medium"){
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(255,187,0,1)";
+    }
+    else{
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(111,255,1)";
+
+    }
     const delBtn = document.createElement("button");
     const divDel = document.createElement("div");
     divDel.classList.add("divDel");
@@ -54,7 +65,7 @@ export default function unfins(allTasks) {
       }
     });
     const edit = document.createElement("div");
-    edit.textContent = "🖉";
+    edit.textContent = "✏️";
     edit.style.cursor = "pointer";
     edit.addEventListener("click", () => {
       editCard.style.display = "block";

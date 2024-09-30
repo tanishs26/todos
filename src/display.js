@@ -71,7 +71,7 @@ export default function display(allTasks) {
     });
 
     const edit = document.createElement("div");
-    edit.textContent = "🖉";
+    edit.textContent = "✏️";
     edit.style.cursor = "pointer";
     edit.addEventListener("click", () => {
       editCard.style.display = "block";
