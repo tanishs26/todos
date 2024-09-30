@@ -36,7 +36,16 @@ export default function display(allTasks) {
       display(allTasks);
     });
     //Box-Shadow:
-    
+    if (allTasks[i].priority == "High") {
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(255,0,0,0.6)";
+    }
+    else if(allTasks[i].priority=="Medium"){
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(255,187,0,1)";
+    }
+    else{
+      container.style.boxShadow = " inset 10px 17px 29px -12px rgba(111,255,1)";
+
+    }
     //checkbox
     const check = document.createElement("input");
     check.type = "checkbox";
